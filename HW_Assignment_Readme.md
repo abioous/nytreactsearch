@@ -57,8 +57,7 @@ Socket.io NPM package
 
 ## Technologies Used
 
-- HTML5 for web pages,CSS
-- Java Script and JQuery for game logic and rendering.
-- node (expres,bodyParser,handlebars,method-override)
-- handelbards for view
-- mysql for persistency
+- HTML5 for web pages,CSS with React
+- node
+- Rest API
+- mongo for persistency
