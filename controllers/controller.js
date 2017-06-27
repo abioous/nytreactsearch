@@ -5,6 +5,10 @@ var Article = require('../models/Article.js');
  *
  * @description :: Server-side logic for managing nytreacts.
  */
+
+
+
+
 module.exports = {
 
     /**
@@ -27,19 +31,19 @@ module.exports = {
      */
     show: function (req, res) {
         var id = req.params.id;
-        Article.findOne({_id: id}, function (err, nytreact) {
+        Article.findOne({_id: id}, function (err, article) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when getting nytreact.',
+                    message: 'Error when getting article.',
                     error: err
                 });
             }
-            if (!nytreact) {
+            if (!article) {
                 return res.status(404).json({
-                    message: 'No such nytreact'
+                    message: 'No such article'
                 });
             }
-            return res.json(nytreact);
+            return res.json(article);
         });
     },
 
@@ -47,19 +51,22 @@ module.exports = {
      * controller.create()
      */
     create: function (req, res) {
-        var nytreact = new nytreactModel({
-			Article : req.body.Article
-
-        });
-
-        Article.save(function (err, nytreact) {
+        var data = {
+            title : req.body.Title,
+            link: req.body.Link,
+            date: new Date(),
+            comment:req.body.Comment
+        };
+        var article = new Article(data);
+        article.save(function (err, nytreact) {
             if (err) {
+                console.log(err);
                 return res.status(500).json({
                     message: 'Error when creating nytreact',
                     error: err
                 });
             }
-            return res.status(201).json(nytreact);
+            return res.status(201).json(article);
         });
     },
 
@@ -70,10 +77,10 @@ module.exports = {
      */
     remove: function (req, res) {
         var id = req.params.id;
-        Article.findByIdAndRemove(id, function (err, nytreact) {
+        Article.findByIdAndRemove(id, function (err, article) {
             if (err) {
                 return res.status(500).json({
-                    message: 'Error when deleting the nytreact.',
+                    message: 'Error when deleting the article.',
                     error: err
                 });
             }

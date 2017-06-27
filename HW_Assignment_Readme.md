@@ -1,14 +1,13 @@
 # HW - Burger
 
-I have build burger MVC app in node js, 
+I have build NYT search MVC app in node js, 
 with rest API,
-mysql persistency,
-handelrbars tempalte
-HTML5 and jQuery
+react
+mongodb persistency,
 
 
 ## Live Link
- - https://github.com/abioous/burger/blob/master/
+ - https://github.com/abioous/nytreactsearch/blob/master/
 
 ## Description on how to use the app
 

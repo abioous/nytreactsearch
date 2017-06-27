@@ -1,26 +1,29 @@
-var express = require('express');
-var router = express.Router();
 var controller = require('../controllers/controller.js');
 
-/*
- * GET
- */
-router.get('/api/saved', controller.list);
-
-/*
- * GET
- */
-router.get('/api/saved/:id', controller.show);
-
-/*
- * POST
- */
-router.post('/api/saved', controller.create);
+module.exports = function (app) {
 
 
-/*
- * DELETE
- */
-router.delete('/api/saved/:id', controller.remove);
+	/*
+	 * GET
+	 */
+	app.get('/api/saved', controller.list);
 
-module.exports = router;
+	/*
+	 * GET
+	 */
+	app.get('/api/saved/:id', controller.show);
+
+	/*
+	 * POST
+	 */
+	app.post('/api/saved', controller.create);
+
+
+	/*
+	 * DELETE
+	 */
+	app.delete('/api/saved/:id', controller.remove);
+
+
+}
+
