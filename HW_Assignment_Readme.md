@@ -1,4 +1,4 @@
-# HW - Burger
+# HW - NYT Articles Search
 
 I have build NYT search MVC app in node js, 
 with rest API,
