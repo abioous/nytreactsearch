@@ -7,7 +7,8 @@ mongodb persistency,
 
 
 ## Live Link
- - https://github.com/abioous/nytreactsearch/blob/master/
+
+ - https://github.com/abioous/nytreactsearch/blob/master/server.js
 
 ## Description on how to use the app
 
